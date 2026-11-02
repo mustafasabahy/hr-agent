@@ -1,0 +1,2869 @@
+{
+  "workflow_id": "4d7da3d440a44850906aa87cb782fd94",
+  "phase": "business_lifecycle_completed_with_conversation_limitations",
+  "started_at": "2026-11-02T11:18:00.063608+00:00",
+  "request_year": 2027,
+  "requested_dates": [
+    "2027-01-11",
+    "2027-01-15"
+  ],
+  "date_change_reason": null,
+  "isolated_database": "/Users/sabahy/Documents/Codex/2026-11-01/files-pasted-by-the-user-you/outputs/hr-agent/data/leave-workflow-demo.db",
+  "initial_state": {
+    "recorded_at": "2026-11-02T11:18:00.062454+00:00",
+    "company_local_date": "2026-11-02",
+    "employee": {
+      "id": "E001",
+      "name": "Ahmed",
+      "department_id": "ENG",
+      "manager_id": "E004",
+      "hire_date": "2025-09-28",
+      "status": "active"
+    },
+    "identity": {
+      "id": "ahmed",
+      "employee_id": "E001",
+      "roles": "[\"employee\"]"
+    },
+    "manager": [
+      {
+        "demo_user": "nadia",
+        "employee_id": "E004",
+        "name": "Nadia",
+        "roles": "[\"employee\", \"manager\"]"
+      }
+    ],
+    "balances": {
+      "2026": {
+        "year": 2026,
+        "annual_allowance": 30,
+        "used_days": 0,
+        "remaining_days": 30
+      },
+      "2027": {
+        "year": 2027,
+        "annual_allowance": 30,
+        "used_days": 0,
+        "remaining_days": 30
+      }
+    },
+    "requests": [],
+    "pending_requests": [],
+    "approved_requests": [],
+    "holidays": [
+      {
+        "day": "2026-12-25",
+        "name": "Company winter holiday"
+      },
+      {
+        "day": "2027-12-25",
+        "name": "Company winter holiday"
+      }
+    ],
+    "weekends": [
+      5,
+      6
+    ],
+    "eligibility_days": 90,
+    "confirmations": []
+  },
+  "latest_state": {
+    "recorded_at": "2026-11-02T11:23:36.633464+00:00",
+    "company_local_date": "2026-11-02",
+    "employee": {
+      "id": "E001",
+      "name": "Ahmed",
+      "department_id": "ENG",
+      "manager_id": "E004",
+      "hire_date": "2025-09-28",
+      "status": "active"
+    },
+    "identity": {
+      "id": "ahmed",
+      "employee_id": "E001",
+      "roles": "[\"employee\"]"
+    },
+    "manager": [
+      {
+        "demo_user": "nadia",
+        "employee_id": "E004",
+        "name": "Nadia",
+        "roles": "[\"employee\", \"manager\"]"
+      }
+    ],
+    "balances": {
+      "2026": {
+        "year": 2026,
+        "annual_allowance": 30,
+        "used_days": 0,
+        "remaining_days": 30
+      },
+      "2027": {
+        "year": 2027,
+        "annual_allowance": 30,
+        "used_days": 5,
+        "remaining_days": 25
+      }
+    },
+    "requests": [
+      {
+        "id": 1,
+        "employee_id": "E001",
+        "start_date": "2027-01-11",
+        "end_date": "2027-01-15",
+        "days": 5,
+        "status": "approved",
+        "deducted_days": 5,
+        "reviewed_by": "E004",
+        "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+        "created_at": "2026-11-02T11:19:46.226009+00:00"
+      }
+    ],
+    "pending_requests": [],
+    "approved_requests": [
+      {
+        "id": 1,
+        "employee_id": "E001",
+        "start_date": "2027-01-11",
+        "end_date": "2027-01-15",
+        "days": 5,
+        "status": "approved",
+        "deducted_days": 5,
+        "reviewed_by": "E004",
+        "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+        "created_at": "2026-11-02T11:19:46.226009+00:00"
+      }
+    ],
+    "holidays": [
+      {
+        "day": "2026-12-25",
+        "name": "Company winter holiday"
+      },
+      {
+        "day": "2027-12-25",
+        "name": "Company winter holiday"
+      }
+    ],
+    "weekends": [
+      5,
+      6
+    ],
+    "eligibility_days": 90,
+    "confirmations": [
+      {
+        "id": "8bb96896b51045809976ec7a42a70fe0",
+        "actor_id": "ahmed",
+        "operation": "request_leave",
+        "arguments": "{\"employee_id\": \"E001\", \"end_date\": \"2027-01-15\", \"start_date\": \"2027-01-11\"}",
+        "status": "completed",
+        "expires_at": "2026-11-02T11:33:14.534727+00:00",
+        "result": "{\"request_id\": 1, \"status\": \"pending\", \"requested_days\": 5, \"coverage\": {\"conflicts\": [], \"manager_review_required\": false, \"coverage_sufficient\": true}, \"balance\": {\"employee_id\": \"E001\", \"year\": 2027, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}"
+      },
+      {
+        "id": "d71f3d8accec4623937039608484218d",
+        "actor_id": "nadia",
+        "operation": "review_leave_request",
+        "arguments": "{\"decision\": \"approve\", \"request_id\": 1}",
+        "status": "completed",
+        "expires_at": "2026-11-02T11:34:46.748533+00:00",
+        "result": "{\"request_id\": 1, \"status\": \"approved\", \"balance\": {\"employee_id\": \"E001\", \"year\": 2027, \"annual_allowance\": 30, \"used_days\": 5, \"remaining_days\": 25}}"
+      }
+    ]
+  },
+  "turns": [
+    {
+      "label": "incomplete_request",
+      "input": "I want to take some annual leave next month.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bfa-fec3-75e0-9843-a8e082d24d0c",
+      "status": "success",
+      "messages": [
+        {
+          "content": "I want to take some annual leave next month.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "cd976112-4e73-44ea-aac7-454bb7acfe6c"
+        },
+        {
+          "content": "Please provide the exact dates for your annual leave next month, including the year, so I can assist you with the request.",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 26,
+              "prompt_tokens": 4854,
+              "total_tokens": 4880,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 0,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkL4eWxBCQQU18G7OBQ1uELhsDsI",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-02db-73ed-8512-e0fd304f707d-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4854,
+            "output_tokens": 26,
+            "total_tokens": 4880,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [],
+      "tool_results": [],
+      "final_response": "Please provide the exact dates for your annual leave next month, including the year, so I can assist you with the request.",
+      "completed_model_calls": 1,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bfa-fec3-75e0-9843-a8e082d24d0c",
+        "trace_id": "01a19bfa-fec3-75e0-9843-a8e082d24d0c",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bfa-fec3-75e0-9843-a8e082d24d0c?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 1,
+        "tool_runs": [],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 0,
+      "confirmation_count_after": 0,
+      "prior_user_messages_visible_to_current_turn": []
+    },
+    {
+      "label": "exact_dates",
+      "input": "I want to take leave from January 11, 2027 to January 15, 2027.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bfb-29d3-70a4-ab57-06870f108398",
+      "status": "success",
+      "messages": [
+        {
+          "content": "I want to take leave from January 11, 2027 to January 15, 2027.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "71bb1d23-3d62-4042-abe1-1c2e1594a167"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 44,
+              "prompt_tokens": 4866,
+              "total_tokens": 4910,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLFgRNgK2CEfo5dwBcORtr9DHdV",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-2cb6-7210-9baa-02ddc06e3d39-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "check_leave_overlap",
+                "arguments": {
+                  "employee_id": "E001",
+                  "start_date": "2027-01-11",
+                  "end_date": "2027-01-15"
+                }
+              },
+              "id": "call_UzErLK844B66CLwOtgRvFSns",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4866,
+            "output_tokens": 44,
+            "total_tokens": 4910,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"overlap\": false, \"requests\": []}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "0ed7dba4-672c-459a-951b-009017d26426",
+          "tool_call_id": "call_UzErLK844B66CLwOtgRvFSns",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 43,
+              "prompt_tokens": 4942,
+              "total_tokens": 4985,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLG6sXHpGRwRO33bTKoaQVbYgVn",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-335a-72b3-8b9b-ada381ee9457-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "request_leave",
+                "arguments": {
+                  "employee_id": "E001",
+                  "start_date": "2027-01-11",
+                  "end_date": "2027-01-15"
+                }
+              },
+              "id": "call_sbTvzGl3waLnPhToWvfjixOT",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4942,
+            "output_tokens": 43,
+            "total_tokens": 4985,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"status\": \"confirmation_required\", \"confirmation_id\": \"8bb96896b51045809976ec7a42a70fe0\", \"operation\": \"request_leave\", \"arguments\": {\"employee_id\": \"E001\", \"start_date\": \"2027-01-11\", \"end_date\": \"2027-01-15\"}, \"expires_at\": \"2026-11-02T11:33:14.534727+00:00\", \"instruction\": \"The human must POST {\\\"confirm\\\":true} to /confirmations/8bb96896b51045809976ec7a42a70fe0. No business change has been made.\"}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "750ef187-e4ab-4004-8c07-05f0f51057e7",
+          "tool_call_id": "call_sbTvzGl3waLnPhToWvfjixOT",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "Your leave request from January 11, 2027 to January 15, 2027 has been prepared and is pending human confirmation. To finalize the request, a human must confirm it through the appropriate confirmation process. Let me know if you need any further assistance.\n\nPending proposal 8bb96896b51045809976ec7a42a70fe0: confirmation_required. No business change committed. Inspect/confirm via the existing FastAPI /confirmations/8bb96896b51045809976ec7a42a70fe0 workflow with the matching demo user and database.",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 55,
+              "prompt_tokens": 5148,
+              "total_tokens": 5203,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4864,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLGJG5Cr9sF7aVunOkOkgfiN4Q2",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-370a-720a-81d5-7ad502cfdab8-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 5148,
+            "output_tokens": 55,
+            "total_tokens": 5203,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4864
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [
+        {
+          "id": "call_UzErLK844B66CLwOtgRvFSns",
+          "tool": "hr_operations",
+          "operation": "check_leave_overlap",
+          "arguments": {
+            "employee_id": "E001",
+            "start_date": "2027-01-11",
+            "end_date": "2027-01-15"
+          }
+        },
+        {
+          "id": "call_sbTvzGl3waLnPhToWvfjixOT",
+          "tool": "hr_operations",
+          "operation": "request_leave",
+          "arguments": {
+            "employee_id": "E001",
+            "start_date": "2027-01-11",
+            "end_date": "2027-01-15"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_call_id": "call_UzErLK844B66CLwOtgRvFSns",
+          "output": {
+            "ok": true,
+            "data": {
+              "overlap": false,
+              "requests": []
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_sbTvzGl3waLnPhToWvfjixOT",
+          "output": {
+            "ok": true,
+            "data": {
+              "status": "confirmation_required",
+              "confirmation_id": "8bb96896b51045809976ec7a42a70fe0",
+              "operation": "request_leave",
+              "arguments": {
+                "employee_id": "E001",
+                "start_date": "2027-01-11",
+                "end_date": "2027-01-15"
+              },
+              "expires_at": "2026-11-02T11:33:14.534727+00:00",
+              "instruction": "The human must POST {\"confirm\":true} to /confirmations/8bb96896b51045809976ec7a42a70fe0. No business change has been made."
+            }
+          }
+        }
+      ],
+      "final_response": "Your leave request from January 11, 2027 to January 15, 2027 has been prepared and is pending human confirmation. To finalize the request, a human must confirm it through the appropriate confirmation process. Let me know if you need any further assistance.\n\nPending proposal 8bb96896b51045809976ec7a42a70fe0: confirmation_required. No business change committed. Inspect/confirm via the existing FastAPI /confirmations/8bb96896b51045809976ec7a42a70fe0 workflow with the matching demo user and database.",
+      "completed_model_calls": 3,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bfb-29d3-70a4-ab57-06870f108398",
+        "trace_id": "01a19bfb-29d3-70a4-ab57-06870f108398",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bfb-29d3-70a4-ab57-06870f108398?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 3,
+        "tool_runs": [
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "end_date": "2027-01-15",
+                "start_date": "2027-01-11"
+              },
+              "operation": "check_leave_overlap"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"overlap\": false, \"requests\": []}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_UzErLK844B66CLwOtgRvFSns",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "end_date": "2027-01-15",
+                "start_date": "2027-01-11"
+              },
+              "operation": "request_leave"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"status\": \"confirmation_required\", \"confirmation_id\": \"8bb96896b51045809976ec7a42a70fe0\", \"operation\": \"request_leave\", \"arguments\": {\"employee_id\": \"E001\", \"start_date\": \"2027-01-11\", \"end_date\": \"2027-01-15\"}, \"expires_at\": \"2026-11-02T11:33:14.534727+00:00\", \"instruction\": \"The human must POST {\\\"confirm\\\":true} to /confirmations/8bb96896b51045809976ec7a42a70fe0. No business change has been made.\"}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_sbTvzGl3waLnPhToWvfjixOT",
+                "type": "tool"
+              }
+            },
+            "error": false
+          }
+        ],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 0,
+      "confirmation_count_after": 1,
+      "prior_user_messages_visible_to_current_turn": []
+    },
+    {
+      "label": "read_only_validations",
+      "input": "For my annual leave from 2027-01-11 to 2027-01-15, verify eligibility, working days excluding holidays/weekends and overlap, and show my current-year balance and 2027 leave history. Read-only checks only; do not create or modify a request.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bfb-6336-724b-b52c-6674d2435d6b",
+      "status": "success",
+      "messages": [
+        {
+          "content": "For my annual leave from 2027-01-11 to 2027-01-15, verify eligibility, working days excluding holidays/weekends and overlap, and show my current-year balance and 2027 leave history. Read-only checks only; do not create or modify a request.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "4c063288-1c8a-4fc5-a4c5-8ef02dd8c209"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 184,
+              "prompt_tokens": 4903,
+              "total_tokens": 5087,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 3840,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLTY4u84b6qTlxutKl6kh5vXYUf",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-6611-7484-a2f2-c93f76659c7b-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "check_leave_eligibility",
+                "arguments": {
+                  "employee_id": "E001"
+                }
+              },
+              "id": "call_uP506dlJjcd6qIWE0NlKdV9w",
+              "type": "tool_call"
+            },
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "calculate_leave_days",
+                "arguments": {
+                  "start_date": "2027-01-11",
+                  "end_date": "2027-01-15",
+                  "employee_id": "E001"
+                }
+              },
+              "id": "call_vKZcqyzcFBzAmP6fYfOVNM9k",
+              "type": "tool_call"
+            },
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "check_leave_overlap",
+                "arguments": {
+                  "employee_id": "E001",
+                  "start_date": "2027-01-11",
+                  "end_date": "2027-01-15"
+                }
+              },
+              "id": "call_bwl3LpBeeTB7HhL6XTZXqHBF",
+              "type": "tool_call"
+            },
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_balance",
+                "arguments": {
+                  "employee_id": "E001"
+                }
+              },
+              "id": "call_Pfxe3vDbwiwxRcird9DhWGY4",
+              "type": "tool_call"
+            },
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_history",
+                "arguments": {
+                  "employee_id": "E001",
+                  "year": 2027
+                }
+              },
+              "id": "call_bJOvGjOsiKGI0a8Jr47gjWjj",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4903,
+            "output_tokens": 184,
+            "total_tokens": 5087,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 3840
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"eligible\": true, \"tenure_days\": 400, \"minimum_days\": 90, \"reason\": \"Active employment and minimum tenure are required.\"}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "cddb32a1-dfc0-4597-b23a-4609c0c75638",
+          "tool_call_id": "call_uP506dlJjcd6qIWE0NlKdV9w",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"working_days\": 5, \"weekends\": [5, 6], \"holidays\": []}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "3f77a8f1-01d4-44a1-99be-9499172fef9d",
+          "tool_call_id": "call_vKZcqyzcFBzAmP6fYfOVNM9k",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"overlap\": false, \"requests\": []}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "e76a8d52-b8e2-4532-a100-a9d3ee0747cb",
+          "tool_call_id": "call_bwl3LpBeeTB7HhL6XTZXqHBF",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"employee_id\": \"E001\", \"year\": 2026, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "fc8d504d-78ac-41a5-8054-ed5677eaf394",
+          "tool_call_id": "call_Pfxe3vDbwiwxRcird9DhWGY4",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"requests\": []}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "acd904f7-9b60-41a8-a01f-d92a12c46bdb",
+          "tool_call_id": "call_bJOvGjOsiKGI0a8Jr47gjWjj",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "You are eligible for annual leave with active employment and sufficient tenure. The requested leave from 2027-01-11 to 2027-01-15 includes 5 working days, excluding weekends and holidays. There is no overlap with existing leave requests. Your current year (2026) leave balance shows 30 days allowance with 0 used and 30 remaining. For 2027, you have no recorded leave requests yet. Let me know if you need further assistance.",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 98,
+              "prompt_tokens": 5253,
+              "total_tokens": 5351,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLV8V1589uOJDzyaB2wqY16Wttb",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-6d04-74e3-b21f-d62df76493da-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 5253,
+            "output_tokens": 98,
+            "total_tokens": 5351,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [
+        {
+          "id": "call_uP506dlJjcd6qIWE0NlKdV9w",
+          "tool": "hr_operations",
+          "operation": "check_leave_eligibility",
+          "arguments": {
+            "employee_id": "E001"
+          }
+        },
+        {
+          "id": "call_vKZcqyzcFBzAmP6fYfOVNM9k",
+          "tool": "hr_operations",
+          "operation": "calculate_leave_days",
+          "arguments": {
+            "start_date": "2027-01-11",
+            "end_date": "2027-01-15",
+            "employee_id": "E001"
+          }
+        },
+        {
+          "id": "call_bwl3LpBeeTB7HhL6XTZXqHBF",
+          "tool": "hr_operations",
+          "operation": "check_leave_overlap",
+          "arguments": {
+            "employee_id": "E001",
+            "start_date": "2027-01-11",
+            "end_date": "2027-01-15"
+          }
+        },
+        {
+          "id": "call_Pfxe3vDbwiwxRcird9DhWGY4",
+          "tool": "hr_operations",
+          "operation": "get_leave_balance",
+          "arguments": {
+            "employee_id": "E001"
+          }
+        },
+        {
+          "id": "call_bJOvGjOsiKGI0a8Jr47gjWjj",
+          "tool": "hr_operations",
+          "operation": "get_leave_history",
+          "arguments": {
+            "employee_id": "E001",
+            "year": 2027
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_call_id": "call_uP506dlJjcd6qIWE0NlKdV9w",
+          "output": {
+            "ok": true,
+            "data": {
+              "eligible": true,
+              "tenure_days": 400,
+              "minimum_days": 90,
+              "reason": "Active employment and minimum tenure are required."
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_vKZcqyzcFBzAmP6fYfOVNM9k",
+          "output": {
+            "ok": true,
+            "data": {
+              "working_days": 5,
+              "weekends": [
+                5,
+                6
+              ],
+              "holidays": []
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_bwl3LpBeeTB7HhL6XTZXqHBF",
+          "output": {
+            "ok": true,
+            "data": {
+              "overlap": false,
+              "requests": []
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_Pfxe3vDbwiwxRcird9DhWGY4",
+          "output": {
+            "ok": true,
+            "data": {
+              "employee_id": "E001",
+              "year": 2026,
+              "annual_allowance": 30,
+              "used_days": 0,
+              "remaining_days": 30
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_bJOvGjOsiKGI0a8Jr47gjWjj",
+          "output": {
+            "ok": true,
+            "data": {
+              "requests": []
+            }
+          }
+        }
+      ],
+      "final_response": "You are eligible for annual leave with active employment and sufficient tenure. The requested leave from 2027-01-11 to 2027-01-15 includes 5 working days, excluding weekends and holidays. There is no overlap with existing leave requests. Your current year (2026) leave balance shows 30 days allowance with 0 used and 30 remaining. For 2027, you have no recorded leave requests yet. Let me know if you need further assistance.",
+      "completed_model_calls": 2,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bfb-6336-724b-b52c-6674d2435d6b",
+        "trace_id": "01a19bfb-6336-724b-b52c-6674d2435d6b",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bfb-6336-724b-b52c-6674d2435d6b?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 2,
+        "tool_runs": [
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001"
+              },
+              "operation": "check_leave_eligibility"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"eligible\": true, \"tenure_days\": 400, \"minimum_days\": 90, \"reason\": \"Active employment and minimum tenure are required.\"}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_uP506dlJjcd6qIWE0NlKdV9w",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "end_date": "2027-01-15",
+                "start_date": "2027-01-11"
+              },
+              "operation": "calculate_leave_days"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"working_days\": 5, \"weekends\": [5, 6], \"holidays\": []}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_vKZcqyzcFBzAmP6fYfOVNM9k",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "end_date": "2027-01-15",
+                "start_date": "2027-01-11"
+              },
+              "operation": "check_leave_overlap"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"overlap\": false, \"requests\": []}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_bwl3LpBeeTB7HhL6XTZXqHBF",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001"
+              },
+              "operation": "get_leave_balance"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"employee_id\": \"E001\", \"year\": 2026, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_Pfxe3vDbwiwxRcird9DhWGY4",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "year": 2027
+              },
+              "operation": "get_leave_history"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"requests\": []}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_bJOvGjOsiKGI0a8Jr47gjWjj",
+                "type": "tool"
+              }
+            },
+            "error": false
+          }
+        ],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 1,
+      "confirmation_count_after": 1,
+      "prior_user_messages_visible_to_current_turn": []
+    },
+    {
+      "label": "context_probe",
+      "input": "Which exact leave dates did I just request? Do not submit or change anything.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bfb-84c9-77de-bc21-9af9f53960ac",
+      "status": "success",
+      "messages": [
+        {
+          "content": "Which exact leave dates did I just request? Do not submit or change anything.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "4b8aa573-05df-4767-a64b-dff29d473991"
+        },
+        {
+          "content": "I have no record of any leave request from you in this conversation. Could you please specify the exact leave dates you are referring to?",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 28,
+              "prompt_tokens": 4860,
+              "total_tokens": 4888,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 3840,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLbwQVsUpYWW5pQStyFgYOvqH1z",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-8836-7667-a489-3e832fc218b7-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4860,
+            "output_tokens": 28,
+            "total_tokens": 4888,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 3840
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [],
+      "tool_results": [],
+      "final_response": "I have no record of any leave request from you in this conversation. Could you please specify the exact leave dates you are referring to?",
+      "completed_model_calls": 1,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bfb-84c9-77de-bc21-9af9f53960ac",
+        "trace_id": "01a19bfb-84c9-77de-bc21-9af9f53960ac",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bfb-84c9-77de-bc21-9af9f53960ac?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 1,
+        "tool_runs": [],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 1,
+      "confirmation_count_after": 1,
+      "prior_user_messages_visible_to_current_turn": []
+    },
+    {
+      "label": "over_balance_request",
+      "input": "I want to request 40 working days of annual leave from 2027-03-01 to 2027-04-23. Please use the backend to validate this request; do not bypass its balance rules.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bfb-adb0-7365-904f-136011df4961",
+      "status": "success",
+      "messages": [
+        {
+          "content": "I want to request 40 working days of annual leave from 2027-03-01 to 2027-04-23. Please use the backend to validate this request; do not bypass its balance rules.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "653dd76c-12f0-42ea-ac2e-a37d7c43efc4"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 44,
+              "prompt_tokens": 4888,
+              "total_tokens": 4932,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLmBOD0tZo4UDmBgtQUwYt7AoZB",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-b0e8-7388-8efd-5582754cb9e7-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "calculate_leave_days",
+                "arguments": {
+                  "start_date": "2027-03-01",
+                  "end_date": "2027-04-23",
+                  "employee_id": "E001"
+                }
+              },
+              "id": "call_B3Fs3wXJeJ71tSIcbcDjMUU6",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4888,
+            "output_tokens": 44,
+            "total_tokens": 4932,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"working_days\": 40, \"weekends\": [5, 6], \"holidays\": []}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "13a2843f-a114-42bb-9b1c-bd8918c42f5f",
+          "tool_call_id": "call_B3Fs3wXJeJ71tSIcbcDjMUU6",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 24,
+              "prompt_tokens": 4976,
+              "total_tokens": 5000,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLnEZatwxJwPRxlKEw4UG7kM91m",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-b551-72dd-9432-6242169f253f-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_balance",
+                "arguments": {
+                  "employee_id": "E001"
+                }
+              },
+              "id": "call_VhxBeknIDLSsE9t437JC8n4S",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4976,
+            "output_tokens": 24,
+            "total_tokens": 5000,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"employee_id\": \"E001\", \"year\": 2026, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "6aeffe67-876d-43ce-94b8-c98d1fd62620",
+          "tool_call_id": "call_VhxBeknIDLSsE9t437JC8n4S",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "You requested 40 working days of annual leave from 2027-03-01 to 2027-04-23. However, your current annual leave balance for 2026 is 30 days remaining. Please clarify if you want to proceed with a request exceeding your current balance or if you want to adjust the leave duration. Also, note that the leave balance shown is for 2026; would you like me to check the balance for 2027?",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 95,
+              "prompt_tokens": 5058,
+              "total_tokens": 5153,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4864,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkLo0ORpPnatSte2wEBPj4Kc5oE9",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfb-b95d-711b-b3c4-eccabaad0995-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 5058,
+            "output_tokens": 95,
+            "total_tokens": 5153,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4864
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [
+        {
+          "id": "call_B3Fs3wXJeJ71tSIcbcDjMUU6",
+          "tool": "hr_operations",
+          "operation": "calculate_leave_days",
+          "arguments": {
+            "start_date": "2027-03-01",
+            "end_date": "2027-04-23",
+            "employee_id": "E001"
+          }
+        },
+        {
+          "id": "call_VhxBeknIDLSsE9t437JC8n4S",
+          "tool": "hr_operations",
+          "operation": "get_leave_balance",
+          "arguments": {
+            "employee_id": "E001"
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_call_id": "call_B3Fs3wXJeJ71tSIcbcDjMUU6",
+          "output": {
+            "ok": true,
+            "data": {
+              "working_days": 40,
+              "weekends": [
+                5,
+                6
+              ],
+              "holidays": []
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_VhxBeknIDLSsE9t437JC8n4S",
+          "output": {
+            "ok": true,
+            "data": {
+              "employee_id": "E001",
+              "year": 2026,
+              "annual_allowance": 30,
+              "used_days": 0,
+              "remaining_days": 30
+            }
+          }
+        }
+      ],
+      "final_response": "You requested 40 working days of annual leave from 2027-03-01 to 2027-04-23. However, your current annual leave balance for 2026 is 30 days remaining. Please clarify if you want to proceed with a request exceeding your current balance or if you want to adjust the leave duration. Also, note that the leave balance shown is for 2026; would you like me to check the balance for 2027?",
+      "completed_model_calls": 3,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bfb-adb0-7365-904f-136011df4961",
+        "trace_id": "01a19bfb-adb0-7365-904f-136011df4961",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bfb-adb0-7365-904f-136011df4961?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 3,
+        "tool_runs": [
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "end_date": "2027-04-23",
+                "start_date": "2027-03-01"
+              },
+              "operation": "calculate_leave_days"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"working_days\": 40, \"weekends\": [5, 6], \"holidays\": []}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_B3Fs3wXJeJ71tSIcbcDjMUU6",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001"
+              },
+              "operation": "get_leave_balance"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"employee_id\": \"E001\", \"year\": 2026, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_VhxBeknIDLSsE9t437JC8n4S",
+                "type": "tool"
+              }
+            },
+            "error": false
+          }
+        ],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 1,
+      "confirmation_count_after": 1,
+      "prior_user_messages_visible_to_current_turn": []
+    },
+    {
+      "label": "post_operation_status",
+      "input": "Show me my updated leave balance and the status of my latest leave request.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bfd-6f10-7162-b9ca-2cff5e294cf7",
+      "status": "success",
+      "messages": [
+        {
+          "content": "Show me my updated leave balance and the status of my latest leave request.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "13077326-20a3-45c4-ae88-e4955b454b1d"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 70,
+              "prompt_tokens": 4859,
+              "total_tokens": 4929,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 3840,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkNdO1Xvf3eYCnoWR6gptLRoR2aP",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfd-718b-7198-b315-053d97612660-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_balance",
+                "arguments": {
+                  "employee_id": "E001"
+                }
+              },
+              "id": "call_mAITKzeg9ye350E64NQIz2bc",
+              "type": "tool_call"
+            },
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_history",
+                "arguments": {
+                  "employee_id": "E001",
+                  "year": 2026
+                }
+              },
+              "id": "call_iqDSoCR0N4O5UuJLjobi5CoQ",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4859,
+            "output_tokens": 70,
+            "total_tokens": 4929,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 3840
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"employee_id\": \"E001\", \"year\": 2026, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "bf3ba657-7639-437d-8663-7f3f350483f7",
+          "tool_call_id": "call_mAITKzeg9ye350E64NQIz2bc",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "{\"ok\": false, \"code\": \"clarification_required\", \"error\": \"The calendar year was not supplied by the user for this date. No business operation was executed.\", \"missing_fields\": [\"year\"], \"errors\": [{\"field\": \"year\", \"type\": \"missing_year_context\", \"message\": \"Ask which calendar year; never infer it from the application date.\"}], \"clarification_required\": true, \"next_step\": \"Ask the user for the explicit year and a complete restatement of the request. Do not retry a business operation with a guessed year.\", \"operation\": \"get_leave_history\"}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "3a3a841a-7a88-4348-88b3-2d51341cd172",
+          "tool_call_id": "call_iqDSoCR0N4O5UuJLjobi5CoQ",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "Your updated leave balance for 2026 shows an annual allowance of 30 days, with 0 days used and 30 days remaining.\n\nTo provide the status of your latest leave request, please specify the calendar year of the leave request you want to check.",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 53,
+              "prompt_tokens": 5116,
+              "total_tokens": 5169,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkNedpiOVNvqWxpM2lnGjFw7hFtL",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bfd-76e7-70d5-8610-8f7e25c5fc20-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 5116,
+            "output_tokens": 53,
+            "total_tokens": 5169,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [
+        {
+          "id": "call_mAITKzeg9ye350E64NQIz2bc",
+          "tool": "hr_operations",
+          "operation": "get_leave_balance",
+          "arguments": {
+            "employee_id": "E001"
+          }
+        },
+        {
+          "id": "call_iqDSoCR0N4O5UuJLjobi5CoQ",
+          "tool": "hr_operations",
+          "operation": "get_leave_history",
+          "arguments": {
+            "employee_id": "E001",
+            "year": 2026
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_call_id": "call_mAITKzeg9ye350E64NQIz2bc",
+          "output": {
+            "ok": true,
+            "data": {
+              "employee_id": "E001",
+              "year": 2026,
+              "annual_allowance": 30,
+              "used_days": 0,
+              "remaining_days": 30
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_iqDSoCR0N4O5UuJLjobi5CoQ",
+          "output": {
+            "ok": false,
+            "code": "clarification_required",
+            "error": "The calendar year was not supplied by the user for this date. No business operation was executed.",
+            "missing_fields": [
+              "year"
+            ],
+            "errors": [
+              {
+                "field": "year",
+                "type": "missing_year_context",
+                "message": "Ask which calendar year; never infer it from the application date."
+              }
+            ],
+            "clarification_required": true,
+            "next_step": "Ask the user for the explicit year and a complete restatement of the request. Do not retry a business operation with a guessed year.",
+            "operation": "get_leave_history"
+          }
+        }
+      ],
+      "final_response": "Your updated leave balance for 2026 shows an annual allowance of 30 days, with 0 days used and 30 days remaining.\n\nTo provide the status of your latest leave request, please specify the calendar year of the leave request you want to check.",
+      "completed_model_calls": 2,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bfd-6f10-7162-b9ca-2cff5e294cf7",
+        "trace_id": "01a19bfd-6f10-7162-b9ca-2cff5e294cf7",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bfd-6f10-7162-b9ca-2cff5e294cf7?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 2,
+        "tool_runs": [
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001"
+              },
+              "operation": "get_leave_balance"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"employee_id\": \"E001\", \"year\": 2026, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_mAITKzeg9ye350E64NQIz2bc",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "year": 2026
+              },
+              "operation": "get_leave_history"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": false, \"code\": \"clarification_required\", \"error\": \"The calendar year was not supplied by the user for this date. No business operation was executed.\", \"missing_fields\": [\"year\"], \"errors\": [{\"field\": \"year\", \"type\": \"missing_year_context\", \"message\": \"Ask which calendar year; never infer it from the application date.\"}], \"clarification_required\": true, \"next_step\": \"Ask the user for the explicit year and a complete restatement of the request. Do not retry a business operation with a guessed year.\", \"operation\": \"get_leave_history\"}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_iqDSoCR0N4O5UuJLjobi5CoQ",
+                "type": "tool"
+              }
+            },
+            "error": false
+          }
+        ],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 2,
+      "confirmation_count_after": 2,
+      "prior_user_messages_visible_to_current_turn": []
+    },
+    {
+      "label": "interactive_7",
+      "input": "Show my 2027 leave history, specifically the status of request #1 for January 11, 2027 to January 15, 2027. This is read-only; do not create or change anything.",
+      "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+      "run_id": "01a19bff-874c-725c-b3a9-f1a116e5b364",
+      "status": "success",
+      "messages": [
+        {
+          "content": "Show my 2027 leave history, specifically the status of request #1 for January 11, 2027 to January 15, 2027. This is read-only; do not create or change anything.",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "991bf74b-fe0d-40a6-bb6f-3b5c4f2f7767"
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 75,
+              "prompt_tokens": 4888,
+              "total_tokens": 4963,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 3840,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkPqOq9MZRJMZOiFAyGIfzSq7iMg",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bff-8a14-7013-9dea-2ab7669fb635-0",
+          "tool_calls": [
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_history",
+                "arguments": {
+                  "employee_id": "E001",
+                  "year": 2027
+                }
+              },
+              "id": "call_uI7auIJ8j6ioiLWZvTfVdU5X",
+              "type": "tool_call"
+            },
+            {
+              "name": "hr_operations",
+              "args": {
+                "operation": "get_leave_history",
+                "arguments": {
+                  "employee_id": "E001",
+                  "year": 2027
+                }
+              },
+              "id": "call_OFSm2lmmx6UBFdgWx1btSMGs",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 4888,
+            "output_tokens": 75,
+            "total_tokens": 4963,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 3840
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"requests\": [{\"id\": 1, \"employee_id\": \"E001\", \"start_date\": \"2027-01-11\", \"end_date\": \"2027-01-15\", \"days\": 5, \"status\": \"approved\", \"deducted_days\": 5, \"reviewed_by\": \"E004\", \"reviewed_at\": \"2026-11-02T11:20:39.466586+00:00\", \"created_at\": \"2026-11-02T11:19:46.226009+00:00\"}]}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "bca78a4a-cb75-4868-95b2-3b92144550b5",
+          "tool_call_id": "call_uI7auIJ8j6ioiLWZvTfVdU5X",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "{\"ok\": true, \"data\": {\"requests\": [{\"id\": 1, \"employee_id\": \"E001\", \"start_date\": \"2027-01-11\", \"end_date\": \"2027-01-15\", \"days\": 5, \"status\": \"approved\", \"deducted_days\": 5, \"reviewed_by\": \"E004\", \"reviewed_at\": \"2026-11-02T11:20:39.466586+00:00\", \"created_at\": \"2026-11-02T11:19:46.226009+00:00\"}]}}",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "hr_operations",
+          "id": "d6157569-15f2-439c-9bf4-414f4dda7879",
+          "tool_call_id": "call_OFSm2lmmx6UBFdgWx1btSMGs",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "Your leave request #1 for January 11, 2027 to January 15, 2027 is approved. It covers 5 days, and the leave days have been deducted accordingly. The request was reviewed by employee E004 on November 2, 2026.",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 57,
+              "prompt_tokens": 5244,
+              "total_tokens": 5301,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0,
+                "text_tokens": null
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cache_write_tokens": null,
+                "cached_tokens": 4736,
+                "image_tokens": null,
+                "text_tokens": null
+              }
+            },
+            "model_provider": "openai",
+            "model_name": "gpt-4.1-mini-2025-04-14",
+            "system_fingerprint": "fp_4fe83ac02c",
+            "id": "chatcmpl-EfkPrWev7zJJbuRJcxvH9mnG3nPSh",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": "Company_AI_Agent",
+          "id": "lc_run--01a19bff-8ed3-73a5-96cf-1b4f3362fa37-0",
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 5244,
+            "output_tokens": 57,
+            "total_tokens": 5301,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 4736
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "tool_calls": [
+        {
+          "id": "call_uI7auIJ8j6ioiLWZvTfVdU5X",
+          "tool": "hr_operations",
+          "operation": "get_leave_history",
+          "arguments": {
+            "employee_id": "E001",
+            "year": 2027
+          }
+        },
+        {
+          "id": "call_OFSm2lmmx6UBFdgWx1btSMGs",
+          "tool": "hr_operations",
+          "operation": "get_leave_history",
+          "arguments": {
+            "employee_id": "E001",
+            "year": 2027
+          }
+        }
+      ],
+      "tool_results": [
+        {
+          "tool_call_id": "call_uI7auIJ8j6ioiLWZvTfVdU5X",
+          "output": {
+            "ok": true,
+            "data": {
+              "requests": [
+                {
+                  "id": 1,
+                  "employee_id": "E001",
+                  "start_date": "2027-01-11",
+                  "end_date": "2027-01-15",
+                  "days": 5,
+                  "status": "approved",
+                  "deducted_days": 5,
+                  "reviewed_by": "E004",
+                  "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+                  "created_at": "2026-11-02T11:19:46.226009+00:00"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "tool_call_id": "call_OFSm2lmmx6UBFdgWx1btSMGs",
+          "output": {
+            "ok": true,
+            "data": {
+              "requests": [
+                {
+                  "id": 1,
+                  "employee_id": "E001",
+                  "start_date": "2027-01-11",
+                  "end_date": "2027-01-15",
+                  "days": 5,
+                  "status": "approved",
+                  "deducted_days": 5,
+                  "reviewed_by": "E004",
+                  "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+                  "created_at": "2026-11-02T11:19:46.226009+00:00"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "final_response": "Your leave request #1 for January 11, 2027 to January 15, 2027 is approved. It covers 5 days, and the leave days have been deducted accordingly. The request was reviewed by employee E004 on November 2, 2026.",
+      "completed_model_calls": 2,
+      "langsmith": {
+        "status": "PASS",
+        "run_id": "01a19bff-874c-725c-b3a9-f1a116e5b364",
+        "trace_id": "01a19bff-874c-725c-b3a9-f1a116e5b364",
+        "url": "https://smith.langchain.com/o/b56b8917-bbb3-4fe0-a71d-e796209b07da/projects/p/755ec23d-ca9c-4e7a-a7ea-cd76c78e1d16/r/01a19bff-874c-725c-b3a9-f1a116e5b364?poll=true",
+        "project": "company-agent-demo",
+        "project_matches": true,
+        "model_runs": 2,
+        "tool_runs": [
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "year": 2027
+              },
+              "operation": "get_leave_history"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"requests\": [{\"id\": 1, \"employee_id\": \"E001\", \"start_date\": \"2027-01-11\", \"end_date\": \"2027-01-15\", \"days\": 5, \"status\": \"approved\", \"deducted_days\": 5, \"reviewed_by\": \"E004\", \"reviewed_at\": \"2026-11-02T11:20:39.466586+00:00\", \"created_at\": \"2026-11-02T11:19:46.226009+00:00\"}]}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_uI7auIJ8j6ioiLWZvTfVdU5X",
+                "type": "tool"
+              }
+            },
+            "error": false
+          },
+          {
+            "name": "hr_operations",
+            "inputs": {
+              "arguments": {
+                "employee_id": "E001",
+                "year": 2027
+              },
+              "operation": "get_leave_history"
+            },
+            "outputs": {
+              "output": {
+                "additional_kwargs": {},
+                "content": "{\"ok\": true, \"data\": {\"requests\": [{\"id\": 1, \"employee_id\": \"E001\", \"start_date\": \"2027-01-11\", \"end_date\": \"2027-01-15\", \"days\": 5, \"status\": \"approved\", \"deducted_days\": 5, \"reviewed_by\": \"E004\", \"reviewed_at\": \"2026-11-02T11:20:39.466586+00:00\", \"created_at\": \"2026-11-02T11:19:46.226009+00:00\"}]}}",
+                "name": "hr_operations",
+                "response_metadata": {},
+                "status": "success",
+                "tool_call_id": "call_OFSm2lmmx6UBFdgWx1btSMGs",
+                "type": "tool"
+              }
+            },
+            "error": false
+          }
+        ],
+        "has_errors": false,
+        "final_output_available": true
+      },
+      "business_data_changed": false,
+      "confirmation_count_before": 2,
+      "confirmation_count_after": 2,
+      "prior_user_messages_visible_to_current_turn": []
+    }
+  ],
+  "checks": {
+    "identity_mapping": "PASS",
+    "conversation_memory": "FAIL: existing Studio hook clears previous turns; no application fix applied",
+    "developer_submission_authorization": "RECEIVED",
+    "developer_manager_authorization": "RECEIVED",
+    "missing_information_no_proposal": "PASS",
+    "context_probe_dates_present": false,
+    "negative_backend_rejection": "PASS",
+    "no_premature_business_change": "PASS",
+    "all_remote_traces_found": "PASS",
+    "same_persistent_thread": "PASS",
+    "proposal_owner_dates": "PASS",
+    "submission_pending_without_deduction": "PASS",
+    "manager_approved_correct_once_deduction": "PASS",
+    "submission_idempotency": "PASS",
+    "manager_idempotency": "PASS",
+    "post_followup_without_restatement": "FAIL: agent requested the year again; previous user dates were not retained",
+    "clarified_post_status": "PASS",
+    "negative_agent_submission": "NOT OBSERVED: model only queried working days/current-year balance; actual requested-year rejection verified separately through HTTP",
+    "negative_no_business_change": "PASS",
+    "post_approval_negative_backend": "PASS"
+  },
+  "thread_id": "01a19bfa-feb9-76fd-89f9-4676e41cfdde",
+  "updated_at": "2026-11-02T11:28:18.765689+00:00",
+  "total_completed_model_calls": 14,
+  "total_remote_model_runs": 14,
+  "proposal": {
+    "status": "confirmation_required",
+    "confirmation_id": "8bb96896b51045809976ec7a42a70fe0",
+    "operation": "request_leave",
+    "arguments": {
+      "employee_id": "E001",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-15"
+    },
+    "expires_at": "2026-11-02T11:33:14.534727+00:00",
+    "instruction": "The human must POST {\"confirm\":true} to /confirmations/8bb96896b51045809976ec7a42a70fe0. No business change has been made."
+  },
+  "backend_read_checks": {
+    "get_leave_balance": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "employee_id": "E001",
+          "year": 2026,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "calculate_leave_days": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "working_days": 5,
+          "weekends": [
+            5,
+            6
+          ],
+          "holidays": []
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "check_leave_overlap": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "overlap": false,
+          "requests": []
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "check_leave_eligibility": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "eligible": true,
+          "tenure_days": 400,
+          "minimum_days": 90,
+          "reason": "Active employment and minimum tenure are required."
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "get_leave_history": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "requests": []
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    }
+  },
+  "negative": {
+    "arguments": {
+      "employee_id": "E001",
+      "start_date": "2027-03-01",
+      "end_date": "2027-04-23"
+    },
+    "intended_working_days": 40,
+    "actual_days_check": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "working_days": 40,
+          "weekends": [
+            5,
+            6
+          ],
+          "holidays": []
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "independent_backend_check": {
+      "http_status": 422,
+      "body": {
+        "ok": false,
+        "data": null,
+        "error": "Insufficient leave balance.",
+        "code": "invalid_request",
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "business_data_unchanged": true,
+    "no_new_proposal": true,
+    "post_approval_backend_check": {
+      "channel": "Independent FastAPI service check, not an agent tool call",
+      "working_days": 40,
+      "remaining_days_before": 25,
+      "response": {
+        "http_status": 422,
+        "body": {
+          "ok": false,
+          "data": null,
+          "error": "Insufficient leave balance.",
+          "code": "invalid_request",
+          "operation": null,
+          "missing_fields": [],
+          "errors": [],
+          "clarification_required": false,
+          "next_step": null,
+          "trusted_context": {}
+        }
+      },
+      "business_data_unchanged": true,
+      "no_new_proposal": true
+    }
+  },
+  "proposal_binding": {
+    "http_status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "id": "8bb96896b51045809976ec7a42a70fe0",
+        "operation": "request_leave",
+        "arguments": {
+          "employee_id": "E001",
+          "end_date": "2027-01-15",
+          "start_date": "2027-01-11"
+        },
+        "status": "pending",
+        "expires_at": "2026-11-02T11:33:14.534727+00:00",
+        "result": null
+      },
+      "error": null,
+      "code": null,
+      "operation": null,
+      "missing_fields": [],
+      "errors": [],
+      "clarification_required": false,
+      "next_step": null,
+      "trusted_context": {}
+    }
+  },
+  "submission": {
+    "authorization": {
+      "approved_at": "2026-11-02T11:19:46.199404+00:00",
+      "mechanism": "Explicit proposal-specific local console confirmation",
+      "proposal_id": "8bb96896b51045809976ec7a42a70fe0",
+      "source": "Explicit developer chat reply: Confirm submission only; assistant relayed the authorized proposal-specific phrase to the console."
+    },
+    "response": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "request_id": 1,
+          "status": "pending",
+          "requested_days": 5,
+          "coverage": {
+            "conflicts": [],
+            "manager_review_required": false,
+            "coverage_sufficient": true
+          },
+          "balance": {
+            "employee_id": "E001",
+            "year": 2027,
+            "annual_allowance": 30,
+            "used_days": 0,
+            "remaining_days": 30
+          }
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "replay_response": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "request_id": 1,
+          "status": "pending",
+          "requested_days": 5,
+          "coverage": {
+            "conflicts": [],
+            "manager_review_required": false,
+            "coverage_sufficient": true
+          },
+          "balance": {
+            "employee_id": "E001",
+            "year": 2027,
+            "annual_allowance": 30,
+            "used_days": 0,
+            "remaining_days": 30
+          }
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "replay_business_unchanged": true,
+    "before": {
+      "recorded_at": "2026-11-02T11:19:46.208599+00:00",
+      "company_local_date": "2026-11-02",
+      "employee": {
+        "id": "E001",
+        "name": "Ahmed",
+        "department_id": "ENG",
+        "manager_id": "E004",
+        "hire_date": "2025-09-28",
+        "status": "active"
+      },
+      "identity": {
+        "id": "ahmed",
+        "employee_id": "E001",
+        "roles": "[\"employee\"]"
+      },
+      "manager": [
+        {
+          "demo_user": "nadia",
+          "employee_id": "E004",
+          "name": "Nadia",
+          "roles": "[\"employee\", \"manager\"]"
+        }
+      ],
+      "balances": {
+        "2026": {
+          "year": 2026,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        },
+        "2027": {
+          "year": 2027,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        }
+      },
+      "requests": [],
+      "pending_requests": [],
+      "approved_requests": [],
+      "holidays": [
+        {
+          "day": "2026-12-25",
+          "name": "Company winter holiday"
+        },
+        {
+          "day": "2027-12-25",
+          "name": "Company winter holiday"
+        }
+      ],
+      "weekends": [
+        5,
+        6
+      ],
+      "eligibility_days": 90,
+      "confirmations": [
+        {
+          "id": "8bb96896b51045809976ec7a42a70fe0",
+          "actor_id": "ahmed",
+          "operation": "request_leave",
+          "arguments": "{\"employee_id\": \"E001\", \"end_date\": \"2027-01-15\", \"start_date\": \"2027-01-11\"}",
+          "status": "pending",
+          "expires_at": "2026-11-02T11:33:14.534727+00:00",
+          "result": null
+        }
+      ]
+    },
+    "after": {
+      "recorded_at": "2026-11-02T11:19:46.229551+00:00",
+      "company_local_date": "2026-11-02",
+      "employee": {
+        "id": "E001",
+        "name": "Ahmed",
+        "department_id": "ENG",
+        "manager_id": "E004",
+        "hire_date": "2025-09-28",
+        "status": "active"
+      },
+      "identity": {
+        "id": "ahmed",
+        "employee_id": "E001",
+        "roles": "[\"employee\"]"
+      },
+      "manager": [
+        {
+          "demo_user": "nadia",
+          "employee_id": "E004",
+          "name": "Nadia",
+          "roles": "[\"employee\", \"manager\"]"
+        }
+      ],
+      "balances": {
+        "2026": {
+          "year": 2026,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        },
+        "2027": {
+          "year": 2027,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        }
+      },
+      "requests": [
+        {
+          "id": 1,
+          "employee_id": "E001",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "days": 5,
+          "status": "pending",
+          "deducted_days": 0,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "created_at": "2026-11-02T11:19:46.226009+00:00"
+        }
+      ],
+      "pending_requests": [
+        {
+          "id": 1,
+          "employee_id": "E001",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "days": 5,
+          "status": "pending",
+          "deducted_days": 0,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "created_at": "2026-11-02T11:19:46.226009+00:00"
+        }
+      ],
+      "approved_requests": [],
+      "holidays": [
+        {
+          "day": "2026-12-25",
+          "name": "Company winter holiday"
+        },
+        {
+          "day": "2027-12-25",
+          "name": "Company winter holiday"
+        }
+      ],
+      "weekends": [
+        5,
+        6
+      ],
+      "eligibility_days": 90,
+      "confirmations": [
+        {
+          "id": "8bb96896b51045809976ec7a42a70fe0",
+          "actor_id": "ahmed",
+          "operation": "request_leave",
+          "arguments": "{\"employee_id\": \"E001\", \"end_date\": \"2027-01-15\", \"start_date\": \"2027-01-11\"}",
+          "status": "completed",
+          "expires_at": "2026-11-02T11:33:14.534727+00:00",
+          "result": "{\"request_id\": 1, \"status\": \"pending\", \"requested_days\": 5, \"coverage\": {\"conflicts\": [], \"manager_review_required\": false, \"coverage_sufficient\": true}, \"balance\": {\"employee_id\": \"E001\", \"year\": 2027, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}"
+        }
+      ]
+    }
+  },
+  "manager_approval": {
+    "manager_identity": {
+      "demo_user": "nadia",
+      "employee_id": "E004",
+      "name": "Nadia",
+      "roles": "[\"employee\", \"manager\"]"
+    },
+    "proposal": {
+      "status": "confirmation_required",
+      "confirmation_id": "d71f3d8accec4623937039608484218d",
+      "operation": "review_leave_request",
+      "arguments": {
+        "request_id": 1,
+        "decision": "approve"
+      },
+      "expires_at": "2026-11-02T11:34:46.748533+00:00",
+      "instruction": "The human must POST {\"confirm\":true} to /confirmations/d71f3d8accec4623937039608484218d. No business change has been made."
+    },
+    "status": "approved",
+    "authorization": {
+      "approved_at": "2026-11-02T11:20:39.446973+00:00",
+      "mechanism": "Explicit proposal-specific local console confirmation",
+      "proposal_id": "d71f3d8accec4623937039608484218d",
+      "source": "Explicit developer chat reply: Approve manager confirmation; assistant relayed the authorized proposal-specific phrase to the console."
+    },
+    "confirmation_response": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "request_id": 1,
+          "status": "approved",
+          "balance": {
+            "employee_id": "E001",
+            "year": 2027,
+            "annual_allowance": 30,
+            "used_days": 5,
+            "remaining_days": 25
+          }
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "replay_response": {
+      "http_status": 200,
+      "body": {
+        "ok": true,
+        "data": {
+          "request_id": 1,
+          "status": "approved",
+          "balance": {
+            "employee_id": "E001",
+            "year": 2027,
+            "annual_allowance": 30,
+            "used_days": 5,
+            "remaining_days": 25
+          }
+        },
+        "error": null,
+        "code": null,
+        "operation": null,
+        "missing_fields": [],
+        "errors": [],
+        "clarification_required": false,
+        "next_step": null,
+        "trusted_context": {}
+      }
+    },
+    "replay_business_unchanged": true,
+    "before": {
+      "recorded_at": "2026-11-02T11:20:39.452808+00:00",
+      "company_local_date": "2026-11-02",
+      "employee": {
+        "id": "E001",
+        "name": "Ahmed",
+        "department_id": "ENG",
+        "manager_id": "E004",
+        "hire_date": "2025-09-28",
+        "status": "active"
+      },
+      "identity": {
+        "id": "ahmed",
+        "employee_id": "E001",
+        "roles": "[\"employee\"]"
+      },
+      "manager": [
+        {
+          "demo_user": "nadia",
+          "employee_id": "E004",
+          "name": "Nadia",
+          "roles": "[\"employee\", \"manager\"]"
+        }
+      ],
+      "balances": {
+        "2026": {
+          "year": 2026,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        },
+        "2027": {
+          "year": 2027,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        }
+      },
+      "requests": [
+        {
+          "id": 1,
+          "employee_id": "E001",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "days": 5,
+          "status": "pending",
+          "deducted_days": 0,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "created_at": "2026-11-02T11:19:46.226009+00:00"
+        }
+      ],
+      "pending_requests": [
+        {
+          "id": 1,
+          "employee_id": "E001",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "days": 5,
+          "status": "pending",
+          "deducted_days": 0,
+          "reviewed_by": null,
+          "reviewed_at": null,
+          "created_at": "2026-11-02T11:19:46.226009+00:00"
+        }
+      ],
+      "approved_requests": [],
+      "holidays": [
+        {
+          "day": "2026-12-25",
+          "name": "Company winter holiday"
+        },
+        {
+          "day": "2027-12-25",
+          "name": "Company winter holiday"
+        }
+      ],
+      "weekends": [
+        5,
+        6
+      ],
+      "eligibility_days": 90,
+      "confirmations": [
+        {
+          "id": "8bb96896b51045809976ec7a42a70fe0",
+          "actor_id": "ahmed",
+          "operation": "request_leave",
+          "arguments": "{\"employee_id\": \"E001\", \"end_date\": \"2027-01-15\", \"start_date\": \"2027-01-11\"}",
+          "status": "completed",
+          "expires_at": "2026-11-02T11:33:14.534727+00:00",
+          "result": "{\"request_id\": 1, \"status\": \"pending\", \"requested_days\": 5, \"coverage\": {\"conflicts\": [], \"manager_review_required\": false, \"coverage_sufficient\": true}, \"balance\": {\"employee_id\": \"E001\", \"year\": 2027, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}"
+        },
+        {
+          "id": "d71f3d8accec4623937039608484218d",
+          "actor_id": "nadia",
+          "operation": "review_leave_request",
+          "arguments": "{\"decision\": \"approve\", \"request_id\": 1}",
+          "status": "pending",
+          "expires_at": "2026-11-02T11:34:46.748533+00:00",
+          "result": null
+        }
+      ]
+    },
+    "after": {
+      "recorded_at": "2026-11-02T11:20:39.469633+00:00",
+      "company_local_date": "2026-11-02",
+      "employee": {
+        "id": "E001",
+        "name": "Ahmed",
+        "department_id": "ENG",
+        "manager_id": "E004",
+        "hire_date": "2025-09-28",
+        "status": "active"
+      },
+      "identity": {
+        "id": "ahmed",
+        "employee_id": "E001",
+        "roles": "[\"employee\"]"
+      },
+      "manager": [
+        {
+          "demo_user": "nadia",
+          "employee_id": "E004",
+          "name": "Nadia",
+          "roles": "[\"employee\", \"manager\"]"
+        }
+      ],
+      "balances": {
+        "2026": {
+          "year": 2026,
+          "annual_allowance": 30,
+          "used_days": 0,
+          "remaining_days": 30
+        },
+        "2027": {
+          "year": 2027,
+          "annual_allowance": 30,
+          "used_days": 5,
+          "remaining_days": 25
+        }
+      },
+      "requests": [
+        {
+          "id": 1,
+          "employee_id": "E001",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "days": 5,
+          "status": "approved",
+          "deducted_days": 5,
+          "reviewed_by": "E004",
+          "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+          "created_at": "2026-11-02T11:19:46.226009+00:00"
+        }
+      ],
+      "pending_requests": [],
+      "approved_requests": [
+        {
+          "id": 1,
+          "employee_id": "E001",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "days": 5,
+          "status": "approved",
+          "deducted_days": 5,
+          "reviewed_by": "E004",
+          "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+          "created_at": "2026-11-02T11:19:46.226009+00:00"
+        }
+      ],
+      "holidays": [
+        {
+          "day": "2026-12-25",
+          "name": "Company winter holiday"
+        },
+        {
+          "day": "2027-12-25",
+          "name": "Company winter holiday"
+        }
+      ],
+      "weekends": [
+        5,
+        6
+      ],
+      "eligibility_days": 90,
+      "confirmations": [
+        {
+          "id": "8bb96896b51045809976ec7a42a70fe0",
+          "actor_id": "ahmed",
+          "operation": "request_leave",
+          "arguments": "{\"employee_id\": \"E001\", \"end_date\": \"2027-01-15\", \"start_date\": \"2027-01-11\"}",
+          "status": "completed",
+          "expires_at": "2026-11-02T11:33:14.534727+00:00",
+          "result": "{\"request_id\": 1, \"status\": \"pending\", \"requested_days\": 5, \"coverage\": {\"conflicts\": [], \"manager_review_required\": false, \"coverage_sufficient\": true}, \"balance\": {\"employee_id\": \"E001\", \"year\": 2027, \"annual_allowance\": 30, \"used_days\": 0, \"remaining_days\": 30}}"
+        },
+        {
+          "id": "d71f3d8accec4623937039608484218d",
+          "actor_id": "nadia",
+          "operation": "review_leave_request",
+          "arguments": "{\"decision\": \"approve\", \"request_id\": 1}",
+          "status": "completed",
+          "expires_at": "2026-11-02T11:34:46.748533+00:00",
+          "result": "{\"request_id\": 1, \"status\": \"approved\", \"balance\": {\"employee_id\": \"E001\", \"year\": 2027, \"annual_allowance\": 30, \"used_days\": 5, \"remaining_days\": 25}}"
+        }
+      ]
+    }
+  },
+  "post_operation_history": {
+    "http_status": 200,
+    "body": {
+      "ok": true,
+      "data": {
+        "requests": [
+          {
+            "id": 1,
+            "employee_id": "E001",
+            "start_date": "2027-01-11",
+            "end_date": "2027-01-15",
+            "days": 5,
+            "status": "approved",
+            "deducted_days": 5,
+            "reviewed_by": "E004",
+            "reviewed_at": "2026-11-02T11:20:39.466586+00:00",
+            "created_at": "2026-11-02T11:19:46.226009+00:00"
+          }
+        ]
+      },
+      "error": null,
+      "code": null,
+      "operation": null,
+      "missing_fields": [],
+      "errors": [],
+      "clarification_required": false,
+      "next_step": null,
+      "trusted_context": {}
+    }
+  },
+  "overall_status": "PARTIAL: lifecycle/business safety passed; requested conversational-memory behavior failed and no application fix was applied",
+  "model_call_accounting": {
+    "observed_openai_http_requests": 14,
+    "note": "Matches completed model messages and remotely retrieved llm child runs. Confirmation/manager operations were direct FastAPI calls, not model calls."
+  },
+  "memory_evidence": {
+    "initial_request_visible_in_turn_2": false,
+    "probe_response": "I have no record of any leave request from you in this conversation. Could you please specify the exact leave dates you are referring to?",
+    "source": "Actual message states returned by the running graph and the real context-probe response, plus inspected before_agent history-removal hook."
+  }
+}

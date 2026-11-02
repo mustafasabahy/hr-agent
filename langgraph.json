@@ -1,0 +1,10 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "company_agent": "./studio_graph.py:build_graph"
+  },
+  "env": ".env",
+  "http": {
+    "app": "./studio_graph.py:local_app"
+  }
+}
